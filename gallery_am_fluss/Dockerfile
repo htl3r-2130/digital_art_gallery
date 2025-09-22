@@ -1,2 +1,3 @@
-FROM nginx:3.22.1-r0
-COPY ./index.html /usr/share/nginx/html
+FROM nginx:stable-alpine3.21-slim
+COPY ./html /usr/share/nginx/html
+COPY ./default.conf /etc/nginx/conf.d/default.conf  
