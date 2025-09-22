@@ -1,0 +1,2 @@
+docker build -t gallery-am-fluss:v1  .
+docker run -p 80:80 --name gallery-am-fluss -d gallery-am-fluss:v1
