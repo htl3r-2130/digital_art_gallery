@@ -21,3 +21,9 @@ jobs:
       
     - name: Run Docker Compose File
       run: docker compose -f gallery_am_fluss/docker-compose.yml up -d
+
+    - name: Upload Docker Compose Logs
+      uses: actions/upload-artifact@v3
+      with:
+        name: docker-compose-logs
+        path: docker-compose.log
