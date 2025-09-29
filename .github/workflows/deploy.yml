@@ -20,4 +20,4 @@ jobs:
       uses: docker/setup-buildx-action@v3
       
     - name: Run Docker Compose File
-      run: docker compose -f gallery_am_fluss/docker-compose.yaml up -d
+      run: docker compose -f gallery_am_fluss/docker-compose.yml up -d
