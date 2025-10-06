@@ -40,7 +40,7 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "✅ Build & Push erfolgreich!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nImage: linusbittner/gallery-am-fluss:latest\nCommit: ${{ github.sha }}"}' \
+               -d '{"content": "✅ Docker Build erfolgreich!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
                ${{ secrets.DISCORD_WEBHOOK_UR }}
 
       - name: Discord Notification (failure)
@@ -48,5 +48,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "❌ Build/Push fehlgeschlagen!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
+               -d '{"content": "❌ Docker Build/Push fehlgeschlagen!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
                ${{ secrets.DISCORD_WEBHOOK_UR }}
