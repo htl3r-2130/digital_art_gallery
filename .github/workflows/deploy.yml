@@ -21,6 +21,8 @@ jobs:
       - name: Build Docker Image (no push on PR)
         uses: docker/build-push-action@v5
         with:
+          context: ./gallery_am_fluss
+          file: ./gallery_am_fluss/Dockerfile
           push: ${{ github.event_name == 'push' }}
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/gallery-am-fluss:latest
 
