@@ -19,7 +19,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Login to Docker Hub
-        if: github.event_name == 'push'   # nur bei Push einloggen
+        if: github.event_name == 'push'
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -40,7 +40,7 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "✅ Docker Build erfolgreich!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
+               -d '{"content": "✅ Docker Build sucessfull!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
 
       - name: Discord Notification (failure)
@@ -48,5 +48,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "❌ Docker Build/Push fehlgeschlagen!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
+               -d '{"content": "❌ Docker Build/Push failed!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
