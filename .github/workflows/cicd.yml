@@ -41,7 +41,7 @@ jobs:
           curl -H "Content-Type: application/json" \
                -X POST \
                -d '{"content": "✅ Docker Build erfolgreich!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
-               ${{ secrets.DISCORD_WEBHOOK_UR }}
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
 
       - name: Discord Notification (failure)
         if: failure()
@@ -49,4 +49,4 @@ jobs:
           curl -H "Content-Type: application/json" \
                -X POST \
                -d '{"content": "❌ Docker Build/Push fehlgeschlagen!\nEvent: ${{ github.event_name }}\nRepo: ${{ github.repository }}\nCommit: ${{ github.sha }}"}' \
-               ${{ secrets.DISCORD_WEBHOOK_UR }}
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
