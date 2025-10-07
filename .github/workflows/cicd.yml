@@ -42,7 +42,7 @@ jobs:
                -X POST \
                -d '{
                  "embeds": [{
-                   "title": "✅ Build & Push erfolgreich",
+                   "title": "✅ Build & push sucessfull",
                    "description": "Repository: ${{ github.repository }}\nCommit: [${{ github.sha }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})",
                    "color": 3066993
                  }]
@@ -56,7 +56,7 @@ jobs:
                -X POST \
                -d '{
                  "embeds": [{
-                   "title": "❌ Build/Push fehlgeschlagen",
+                   "title": "❌ Build/Push failed",
                    "description": "Repository: ${{ github.repository }}\nCommit: [${{ github.sha }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})",
                    "color": 15158332
                  }]
