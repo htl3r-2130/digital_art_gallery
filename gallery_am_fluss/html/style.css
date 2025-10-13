@@ -1,0 +1,13 @@
+body{
+    background: #212121;
+}
+#gallery{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.images{
+    height: 250px;
+    width: 250px;
+}
