@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Georgia', serif;
+
 }
 
 body {
@@ -65,12 +67,16 @@ h1 {
 
 .description h1 {
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: #ffffff;
     margin: 0;
     text-shadow: none;
     letter-spacing: 0.5px;
     font-weight: 600;
     text-align: left;
+}
+.description p {
+    font-size: 1rem;
+    color: #ffffff;
 }
 
 /* Responsive Design */
