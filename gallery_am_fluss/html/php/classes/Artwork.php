@@ -1,6 +1,6 @@
 <?php
 
-//Kein require? NACHFRAGEN
+require_once "../interfaces/ArtworkInterface.php";
 abstract class AbstractArtwork implements ArtworkInterface
 {
     public function __construct(protected string $name, protected string $artist){}
