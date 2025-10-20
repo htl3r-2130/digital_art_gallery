@@ -1,6 +1,6 @@
 <?php
 
-require_once "../interfaces/ArtworkInterface.php";
+require_once __DIR__ . "/../interfaces/ArtworkInterface.php";
 abstract class AbstractArtwork implements ArtworkInterface
 {
     public function __construct(protected string $name, protected string $artist){}

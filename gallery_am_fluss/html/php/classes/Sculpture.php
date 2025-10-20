@@ -1,16 +1,8 @@
 <?php
-require_once __DIR__ . '/../interfaces/ArtworkInterface.php';
+require_once 'Artwork.php';
 
-class Sculpture implements ArtworkInterface {
-  public function __construct(private string $title, private string $artist, private string $imagePath) {}
-
-    public function getName(): string {
-    return $this->title;
-    }
-
-  public function getArtist(): string {
-      return $this->artist;
-  }
+class Sculpture extends AbstractArtwork {
+  public function __construct(protected string $title, protected string $artist, protected string $imagePath) {}
 
   public function getDisplayHTML(): string {
     return "
