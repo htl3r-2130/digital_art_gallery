@@ -1,7 +1,11 @@
 <?php
 class Artist {
+    public int $id;
+    public string $name;
+    public string $biography;
+    public array $artworks = [];
 
-    public function __construct(public int $id, public string $name, public string $biography, public array $artworks = []) {
+    public function __construct($id, $name, $biography, $artworks) {
         $this->id = $id;
         $this->name = $name;
         $this->biography = $biography;
