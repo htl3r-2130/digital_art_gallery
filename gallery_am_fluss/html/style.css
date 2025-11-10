@@ -20,7 +20,7 @@ body {
     margin: 0 auto;
 }
 
-.image {
+.artwork {
     break-inside: avoid;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -28,19 +28,19 @@ body {
     background-color: #0f3460;
 }
 
-.image:nth-child(4n+1):hover { transform: rotate(-0.3deg) scale(1.03); }
-.image:nth-child(4n+2):hover { transform: rotate(0.2deg) scale(1.03); }
-.image:nth-child(4n+3):hover { transform: rotate(-0.2deg) scale(1.03); }
-.image:nth-child(4n+4):hover { transform: rotate(0.3deg) scale(1.03); }
+.artwork:nth-child(4n+1):hover { transform:scale(1.03); }
+.artwork:nth-child(4n+2):hover { transform:scale(1.03); }
+.artwork:nth-child(4n+3):hover { transform:scale(1.03); }
+.artwork:nth-child(4n+4):hover { transform:scale(1.03); }
 
-.image .description {
+.artwork .description {
     text-align: center;
     color: #dddddd;
     font-size: 1rem;
     padding: 5px;
 }
 
-.image h1 {
+.artwork h1 {
     text-align: center;
     color: #ffffff;
     font-size: 1.5rem;
@@ -50,7 +50,7 @@ body {
     font-weight: 400;
 }
 
-.image img {
+.artwork img {
     width: 100%;
     height: auto;
     display: block;

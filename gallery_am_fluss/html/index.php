@@ -1,20 +1,11 @@
 <?php
 require_once __DIR__ . "/php/classes/Painting.php";
 require_once __DIR__ . "/php/classes/Sculpture.php";
-$artist = new Artist(1, "Clara Meier", "Lorem", []);
 $paintings = [
-    new Painting("Sunset Over the River", $artist, "media/art-gallery-pic-1.jpg"),
-    new Painting("Blue Dreams", $artist, "media/art-gallery-pic-2.jpg"),
-    new Painting("Silent Horizon", $artist, "media/art-gallery-pic-5.jpg"),
-    new Painting("Abstract Fields", $artist, "media/art-gallery-pic-3.jpg"),
-    new Painting("Golden Reflections", $artist, "media/art-gallery-pic-4.jpg"),
+    new Painting(1, "Bild", 1889, "media/art-gallery-pic-1.jpg")
 ];
 $sculptures = [
-    new Sculpture("Stone Embrace", $artist, "media/art-gallery-sculpture-1.jpg"),
-    new Sculpture("Rhythm of the Void", $artist, "media/art-gallery-sculpture-5.jpg"),
-    new Sculpture("Celestial Spiral", $artist, "media/art-gallery-sculpture-2.jpg"),
-    new Sculpture("The Observer", $artist, "media/art-gallery-sculpture-4.jpg"),
-    new Sculpture("Iron Blossom", $artist, "media/art-gallery-sculpture-3.jpg"),
+    new Sculpture(1,"Statue", "1990", "media/art-gallery-sculpture-1.jpg")
 ];
 ?>
 <!DOCTYPE html>
