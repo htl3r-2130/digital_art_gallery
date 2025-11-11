@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Gallery – JSON Output</title>
+</head>
+<body>
+  <h1>Alle Artworks (JSON)</h1>
+  <pre id="output">Lade Daten...</pre>
+
+  <script>
+    const apiUrl = "http://localhost/api.php";
+
+    fetch(apiUrl, {
+      headers: { "Accept": "application/json" }
+    })
+    .then(response => {
+      if (!response.ok) throw new Error("Fehler beim Abrufen der API");
+      return response.json();
+    })
+    .then(data => {
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+      document.getElementById("output").textContent = "Fehler: " + error.message;
+    });
+  </script>
+</body>
+</html>
