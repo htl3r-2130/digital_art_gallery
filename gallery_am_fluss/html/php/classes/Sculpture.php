@@ -12,4 +12,12 @@ class Sculpture extends Artwork {
             </div>
         </div>";
     }
+    public function toArray(): array {
+      return [
+        'id' => $this->id,
+        'title' => $this->title,
+        'year' => $this->creationYear,
+        'image' => $this->imagePath
+      ];
+}
 }

@@ -20,4 +20,6 @@ abstract class Artwork implements ArtworkInterface {
     }
     
     abstract public function getDisplayHtml(): string;
+
+    abstract public function toArray(): array;
 }
