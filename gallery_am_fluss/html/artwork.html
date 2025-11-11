@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery am Fluss – Artwork Detail</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #single-artwork {
+      max-width: 1000px;
+      margin: 5% auto;
+      background-color: #0f3460;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    #single-artwork:hover {
+      transform: scale(1.01);
+    }
+
+    #single-artwork img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    #single-artwork h1 {
+      font-size: 2rem;
+      margin-top: 1rem;
+      color: #fff;
+      font-weight: 400;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 700px) {
+      #single-artwork h1 { font-size: 1.5rem; }
+      #single-artwork h2 { font-size: 1.1rem; }
+      #single-artwork p { font-size: 0.9rem; width: 90%; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="header">Gallery am Fluss</h1>
+  <div id="single-artwork">
+    <p>Lade Kunstwerk...</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    const container = document.getElementById("single-artwork");
+
+    if (!id) {
+      container.innerHTML = "<p>Kein Artwork angegeben (?id=...)</p>";
+    } else {
+      const apiUrl = `http://localhost/api.php?id=${id}`;
+
+      fetch(apiUrl, {
+        headers: { "Accept": "application/json" }
+      })
+      .then(response => {
+        if (!response.ok) throw new Error("Fehler beim Abrufen der API");
+        return response.json();
+      })
+      .then(data => {
+        container.innerHTML = `
+          <img src="${data.image}" alt="${data.title}">
+          <h1>${data.title}</h1>
+        `;
+      })
+      .catch(error => {
+        container.innerHTML = `<p>Fehler: ${error.message}</p>`;
+      });
+    }
+  </script>
+</body>
+</html>
