@@ -11,14 +11,15 @@ $artists = Seeder::seed();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php foreach ($artists as $artist): ?>
         <h1 id=header>Seeder example</h1>
+        <?php foreach ($artists as $artist): ?>
         <h1><?= htmlspecialchars($artist->name) ?></h1>
         <div id="gallery">
             <?php foreach ($artist->artworks as $painting): ?>
                 <?= $painting->getDisplayHtml(); ?>
             <?php endforeach; ?>
         </div>
+        <br>
     <?php endforeach; ?>
 </body>
 </html>

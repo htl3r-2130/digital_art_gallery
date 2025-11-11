@@ -5,7 +5,7 @@ $paintings = [
     new Painting(1, "Bild", 1889, "media/art-gallery-pic-1.jpg")
 ];
 $sculptures = [
-    new Sculpture(1,"Statue", "1990", "media/art-gallery-sculpture-1.jpg")
+    new Sculpture(1,"Statue", 1990, "media/art-gallery-sculpture-1.jpg")
 ];
 ?>
 <!DOCTYPE html>
