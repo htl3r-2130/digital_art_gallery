@@ -13,7 +13,9 @@ services:
       - php
 
   php:
-    image: php:8.2-fpm-alpine
+    build:
+      context: .
+      dockerfile: php.Dockerfile
     container_name: gallery-php
     volumes:
-      - ./html:/var/www/html
+    - ./html:/var/www/html
