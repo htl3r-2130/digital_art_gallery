@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/vendoor/autoload.php";
+require_once __DIR__ . "/vendor/autoload.php";
 require_once __DIR__ . "/php/jwtMiddleware.php";
 require_once __DIR__ . "/php/classes/Seeder.php";
 
