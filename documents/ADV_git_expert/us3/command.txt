@@ -1,0 +1,1 @@
+linus@ideapad:~/dev/digital_art_gallery$ git revert 945dc01
