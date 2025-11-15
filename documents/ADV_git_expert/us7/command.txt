@@ -1,0 +1,1 @@
+linus@ideapad:~/dev/digital_art_gallery$ git archive --format=zip --output=release.zip HEAD
