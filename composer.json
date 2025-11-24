@@ -1,0 +1,10 @@
+{
+    "name": "wip/gallery-am-fluss",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Wip\\GalleryAmFluss\\": "src/"
+        }
+    },
+    "require": {}
+}
