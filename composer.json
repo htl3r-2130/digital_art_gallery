@@ -6,5 +6,7 @@
             "Wip\\GalleryAmFluss\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "endroid/qr-code": "^6.0"
+    }
 }

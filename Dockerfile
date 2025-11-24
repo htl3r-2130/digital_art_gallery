@@ -1,13 +1,14 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2-fpm
 
-# für Composer & Erweiterungen notwendige Libraries
-RUN apk update && apk add --no-cache \
-    git \
-    unzip \
-    libzip-dev \
-    && docker-php-ext-install zip
+# Systempakete & GD installieren
+RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd
 
-# Composer installieren (aus offiziellem Composer-Image kopiert)
+# Composer installieren
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www/html
+WORKDIR /var/www
