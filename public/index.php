@@ -1,29 +1,22 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+$template = fread(fopen("template.html", "r"), filesize("index.html"));
 
-use Wip\GalleryAmFluss\Model\Seeder;
-use Wip\GalleryAmFluss\Model\Artist;
+$artworks = [
+    ["media/art-gallery-pic-1.jpg", "Sunset River (2001)"],
+    ["media/art-gallery-pic-2.jpg", "Mountain Dreams (1998)"],
+    ["media/art-gallery-pic-3.jpg", "Ocean Reflections (2015)"]
+];
 
-$artists = Seeder::seed();
-?>
-
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Gallery Am Fluss</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-        <h1 id=header>Seeder example</h1>
-        <?php foreach ($artists as $artist): ?>
-        <h1><?= htmlspecialchars($artist->name) ?></h1>
-        <div id="gallery">
-            <?php foreach ($artist->artworks as $painting): ?>
-                <?= $painting->getDisplayHtml(); ?>
-            <?php endforeach; ?>
+$artworkText = "";
+foreach ($artworks as $artwork) {
+  $artworkText .= <<<HTML
+        <div class='artwork'>
+            <img src="{$artwork[0]}" alt="painting">
+            <div class='description'>
+                <h1>{$artwork[1]}</h1>
+            </div>
         </div>
-        <br>
-    <?php endforeach; ?>
-</body>
-</html>
+    HTML;
+} 
+$render = str_replace("{{Artworks}}", $artworkText, $template);
+echo $render;
