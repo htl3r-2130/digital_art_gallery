@@ -4,7 +4,6 @@ namespace Wip\GalleryAmFluss\Model;
 class Seeder {
 
     public static function seed(): array {
-        // Künstliche Beispiel-Daten (fiktiv)
         return [
             new Artist(
                 1,
@@ -37,6 +36,28 @@ class Seeder {
                     new Painting(10, "Crimson Mirage", 2022, "media/art-gallery-pic-10.jpg"),
                     new Painting(11, "The Forgotten Sea", 2024, "media/art-gallery-pic-11.jpg"),
                     new Painting(12, "Between Shadows", 2021, "media/art-gallery-pic-12.jpg"),
+                ]
+            ),
+            new Artist(
+                4,
+                "Arion Velasquez",
+                "Arion Velasquez ist bekannt für seine lebhaften urbanen Szenen und futuristischen Metropolen.",
+                [
+                    new Painting(13, "Neon Pulse", 2020, "media/art-gallery-pic-13.jpg"),
+                    new Painting(14, "Steel Horizon", 2021, "media/art-gallery-pic-14.jpg"),
+                    new Painting(15, "City of Echoes", 2022, "media/art-gallery-pic-15.jpg"),
+                    new Painting(16, "Metropolis Rising", 2023, "media/art-gallery-pic-16.jpg"),
+                ]
+            ),
+            new Artist(
+                5,
+                "Seren Valora",
+                "Seren Valora erschafft minimalistische Naturmotive mit ruhigem Farbklang und meditativem Ausdruck.",
+                [
+                    new Painting(17, "Silent Bloom", 2018, "media/art-gallery-pic-17.jpg"),
+                    new Painting(18, "Mist over Pines", 2019, "media/art-gallery-pic-18.jpg"),
+                    new Painting(19, "Breath of Winter", 2021, "media/art-gallery-pic-19.jpg"),
+                    new Painting(20, "Soft Horizon", 2023, "media/art-gallery-pic-20.jpg"),
                 ]
             )
         ];

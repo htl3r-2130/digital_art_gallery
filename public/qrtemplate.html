@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 id="header">Interactive QR Code Generator</h1>
+
+  <form method="POST">
+    <label for="id">Artwork ID:</label>
+    <input type="text" name="id" id="id" placeholder="Enter artwork ID">
+    <button type="submit">Generate QR Code</button>
+  </form>
+
+  <div id="result">
+    {{qrResult}}
+  </div>
+</body>
+</html>

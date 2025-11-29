@@ -1,7 +1,9 @@
 <?php
+
 namespace Wip\GalleryAmFluss\Model;
 
-class Painting extends Artwork {
+class Painting extends Artwork
+{
 
     public function getDisplayHTML(): string {
         return "
@@ -19,5 +21,8 @@ class Painting extends Artwork {
             'year' => $this->creationYear,
             'image' => $this->imagePath
         ];
-}
+    }
+    public function getInfoText(): string {
+        return "{$this->getTitle()} ({$this->creationYear})";
+    }
 }
