@@ -1,54 +1,48 @@
 <?php
-require __DIR__ . "/../vendor/autoload.php";
+require __DIR__ . '/../vendor/autoload.php';
 
-use Endroid\QrCode\Builder\Builder;
-use Endroid\QrCode\Encoding\Encoding;
-use Endroid\QrCode\Writer\PngWriter;
-use Endroid\QrCode\ErrorCorrectionLevel;
-use Endroid\QrCode\RoundBlockSizeMode;
+use Wip\GalleryAmFluss\Model\Seeder;
+use Wip\GalleryAmFluss\Model\Artist;
 
-$writer = new PngWriter();
-$template = fread(fopen("template.html", "r"), filesize("index.html"));
+$artists = Seeder::seed();
 
-$artworks = [
-    ["media/art-gallery-pic-1.jpg", "Sunset River (2001)", "Sunset River (2001) – Famous river landscape painting"],
-    ["media/art-gallery-pic-2.jpg", "Mountain Dreams (1998)", "Mountain Dreams (1998) – Abstract mountain scenery"],
-    ["media/art-gallery-pic-3.jpg", "Ocean Reflections (2015)", "Ocean Reflections (2015) – Modern ocean reflections"]
-];
+$language = $_COOKIE["language"] ?? null;
+switch ($language) {
+    case "de":
+        $headerText = "Willkommen in der digitalen Galerie!";
+        break;
+    case "en":
+        $headerText = "Welcome to the digital gallery!";
+        break;
+    default:
+        $headerText = "Willkommen in der digitalen Galerie!";
+        break;
+}
+?>
 
-$artworkText = "";
-foreach ($artworks as $artwork) {
+<!DOCTYPE html>
+<html lang="de">
 
-    $builder = new Builder(
-        writer: new PngWriter(),
-        data: $artwork[2],
-        encoding: new Encoding('UTF-8'),
-        errorCorrectionLevel: ErrorCorrectionLevel::High,
-        size: 150,
-        margin: 10,
-        roundBlockSizeMode: RoundBlockSizeMode::Margin
-    );;
-    $result = $builder->build();
-    $slug = slugify($artwork[1]);
-    $qrFile = "media/qr/qr-$slug.png";
-    $result->saveToFile($qrFile);
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery Am Fluss</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    $artworkText .= <<<HTML
-        <div class='artwork'>
-            <img src="{$artwork[0]}" alt="painting">
-            <div class='description'>
-                <h1>{$artwork[1]}</h1>
-                <img class="qr" src="$qrFile" alt="QR Code">
-            </div>
+<body>
+
+    <h1 id=header><?= $headerText ?><a href="preferences.php">DE/EN</a></h1>
+
+
+    <?php foreach ($artists as $artist): ?>
+        <h1><?= htmlspecialchars($artist->name) ?></h1>
+        <div id="gallery">
+            <?php foreach ($artist->artworks as $painting): ?>
+                <?= $painting->getDisplayHtml(); ?>
+            <?php endforeach; ?>
         </div>
-    HTML;
-}
-$render = str_replace("{{Artworks}}", $artworkText, $template);
-echo $render;
+        <br>
+    <?php endforeach; ?>
+</body>
 
-function slugify($text)
-{
-    $text = strtolower(trim($text));
-    $text = preg_replace('/[^a-z0-9]+/i', '-', $text);
-    return trim($text, '-');
-}
+</html>
