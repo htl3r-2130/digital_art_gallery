@@ -1,5 +1,5 @@
 <?php
-$currentLanguage = $_COOKIE['language'] ?? 'en';
+$currentLanguage = $_COOKIE['language'] ?? 'de';
 
 // Textbausteine
 $text = [
