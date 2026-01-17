@@ -15,7 +15,7 @@ class SculptureTest extends TestCase
             2,
             'The Thinker',
             1904,
-            '/media/the-thinker.jpg'
+            '/media/the-thinker.jpg',
         );
     }
 

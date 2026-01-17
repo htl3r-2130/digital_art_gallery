@@ -4,8 +4,8 @@ namespace Wip\GalleryAmFluss\Model;
 
 class Painting extends Artwork
 {
-
-    public function getDisplayHTML(): string {
+    public function getDisplayHTML(): string
+    {
         return "
         <div class='artwork'>
             <img src='{$this->imagePath}' alt='{$this->title}'>
@@ -14,15 +14,17 @@ class Painting extends Artwork
             </div>
         </div>";
     }
-    public function toArray(): array {
+    public function toArray(): array
+    {
         return [
             'id' => $this->id,
             'title' => $this->title,
             'year' => $this->creationYear,
-            'image' => $this->imagePath
+            'image' => $this->imagePath,
         ];
     }
-    public function getInfoText(): string {
+    public function getInfoText(): string
+    {
         return "{$this->getTitle()} ({$this->creationYear})";
     }
 }

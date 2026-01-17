@@ -11,7 +11,7 @@ class ArtistTest extends TestCase
             1,
             'Claude Monet',
             'Founder of French Impressionist painting',
-            []
+            [],
         );
 
         $this->assertInstanceOf(Artist::class, $artist);
@@ -27,7 +27,7 @@ class ArtistTest extends TestCase
             2,
             'Vincent van Gogh',
             'Dutch post-impressionist painter',
-            []
+            [],
         );
 
         $array = $artist->toArray();
@@ -44,10 +44,11 @@ class ArtistTest extends TestCase
     {
         // Einfaches Mock-Objekt mit toArray()
         $artwork = new class {
-            public function toArray(): array {
+            public function toArray(): array
+            {
                 return [
                     'title' => 'Water Lilies',
-                    'year' => 1899
+                    'year' => 1899,
                 ];
             }
         };
@@ -56,7 +57,7 @@ class ArtistTest extends TestCase
             3,
             'Claude Monet',
             'Impressionist painter',
-            [$artwork]
+            [$artwork],
         );
 
         $array = $artist->toArray();
@@ -72,7 +73,7 @@ class ArtistTest extends TestCase
             4,
             'Unknown Artist',
             '',
-            []
+            [],
         );
 
         $array = $artist->toArray();

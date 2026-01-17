@@ -1,9 +1,11 @@
 <?php
+
 namespace Wip\GalleryAmFluss\Model;
 
-class Sculpture extends Artwork {
-
-    public function getDisplayHTML(): string {
+class Sculpture extends Artwork
+{
+    public function getDisplayHTML(): string
+    {
         return "
         <div class='artwork'>
             <img src='{$this->imagePath}' alt='{$this->title}'>
@@ -12,12 +14,13 @@ class Sculpture extends Artwork {
             </div>
         </div>";
     }
-    public function toArray(): array {
-      return [
-        'id' => $this->id,
-        'title' => $this->title,
-        'year' => $this->creationYear,
-        'image' => $this->imagePath
-      ];
-}
+    public function toArray(): array
+    {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'year' => $this->creationYear,
+            'image' => $this->imagePath,
+        ];
+    }
 }

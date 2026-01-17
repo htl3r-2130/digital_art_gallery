@@ -9,7 +9,7 @@ $text = [
         'select' => 'Select language:',
         'save' => 'Save Preference',
         'delete' => 'Delete Cookie',
-        'back' => 'Back to the gallery'
+        'back' => 'Back to the gallery',
     ],
     'de' => [
         'title' => 'Spracheinstellungen',
@@ -17,8 +17,8 @@ $text = [
         'select' => 'Sprache auswählen:',
         'save' => 'Einstellung speichern',
         'delete' => 'Cookie löschen',
-        'back' => 'Zurück zur Galerie'
-    ]
+        'back' => 'Zurück zur Galerie',
+    ],
 ];
 
 $t = $text[$currentLanguage] ?? $text['de'];

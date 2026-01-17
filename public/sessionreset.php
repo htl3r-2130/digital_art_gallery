@@ -1,4 +1,5 @@
 <?php
+
 session_save_path("/tmp");
 
 session_set_cookie_params([
@@ -6,7 +7,7 @@ session_set_cookie_params([
     'path' => '/',
     'secure' => false,
     'httponly' => true,
-    'samesite' => 'Strict'
+    'samesite' => 'Strict',
 ]);
 
 session_start();

@@ -1,7 +1,9 @@
 <?php
+
 namespace Wip\GalleryAmFluss\Interfaces;
 
-interface ArtworkInterface{
+interface ArtworkInterface
+{
     public function getTitle(): string;
     public function getDisplayHtml(): string;
 }

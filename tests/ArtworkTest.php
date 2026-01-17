@@ -16,7 +16,7 @@ class TestArtwork extends Artwork
             'id' => 1,
             'title' => $this->title,
             'year' => $this->creationYear,
-            'imagePath' => $this->imagePath
+            'imagePath' => $this->imagePath,
         ];
     }
 }
@@ -32,7 +32,7 @@ class ArtworkTest extends TestCase
             1,
             'Starry Night',
             1889,
-            '/media/starry-night.jpg'
+            '/media/starry-night.jpg',
         );
     }
 

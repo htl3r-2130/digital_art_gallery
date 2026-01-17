@@ -11,7 +11,7 @@ session_set_cookie_params([
     'domain' => "",                 // leer = aktuelle Domain
     'secure' => false,              // true falls HTTPS aktiv! (entwicklungsumgebung = false)
     'httponly' => true,             // JS Zugriff verhindern
-    'samesite' => 'Strict'          // CSRF Schutz
+    'samesite' => 'Strict',          // CSRF Schutz
 ]);
 
 session_start();

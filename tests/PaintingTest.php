@@ -15,7 +15,7 @@ class PaintingTest extends TestCase
             1,
             'Starry Night',
             1889,
-            '/media/starry-night.jpg'
+            '/media/starry-night.jpg',
         );
     }
 

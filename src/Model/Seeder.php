@@ -1,9 +1,11 @@
 <?php
+
 namespace Wip\GalleryAmFluss\Model;
 
-class Seeder {
-
-    public static function seed(): array {
+class Seeder
+{
+    public static function seed(): array
+    {
         return [
             new Artist(
                 1,
@@ -14,7 +16,7 @@ class Seeder {
                     new Painting(2, "Silent Horizon", 2019, "media/art-gallery-pic-2.jpg"),
                     new Painting(3, "Eclipse of Thought", 2021, "media/art-gallery-pic-3.jpg"),
                     new Painting(4, "Fragments of Tomorrow", 2022, "media/art-gallery-pic-4.jpg"),
-                ]
+                ],
             ),
             new Artist(
                 2,
@@ -25,7 +27,7 @@ class Seeder {
                     new Painting(6, "Glass Memory", 2020, "media/art-gallery-pic-6.jpg"),
                     new Painting(7, "Still Heart", 2021, "media/art-gallery-pic-7.jpg"),
                     new Painting(8, "Dust and Dawn", 2022, "media/art-gallery-pic-8.jpg"),
-                ]
+                ],
             ),
             new Artist(
                 3,
@@ -36,7 +38,7 @@ class Seeder {
                     new Painting(10, "Crimson Mirage", 2022, "media/art-gallery-pic-10.jpg"),
                     new Painting(11, "The Forgotten Sea", 2024, "media/art-gallery-pic-11.jpg"),
                     new Painting(12, "Between Shadows", 2021, "media/art-gallery-pic-12.jpg"),
-                ]
+                ],
             ),
             new Artist(
                 4,
@@ -47,7 +49,7 @@ class Seeder {
                     new Painting(14, "Steel Horizon", 2021, "media/art-gallery-pic-14.jpg"),
                     new Painting(15, "City of Echoes", 2022, "media/art-gallery-pic-15.jpg"),
                     new Painting(16, "Metropolis Rising", 2023, "media/art-gallery-pic-16.jpg"),
-                ]
+                ],
             ),
             new Artist(
                 5,
@@ -58,8 +60,8 @@ class Seeder {
                     new Painting(18, "Mist over Pines", 2019, "media/art-gallery-pic-18.jpg"),
                     new Painting(19, "Breath of Winter", 2021, "media/art-gallery-pic-19.jpg"),
                     new Painting(20, "Soft Horizon", 2023, "media/art-gallery-pic-20.jpg"),
-                ]
-            )
+                ],
+            ),
         ];
     }
 }
